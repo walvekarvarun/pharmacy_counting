@@ -16,7 +16,7 @@ If Patientname is repeated then only the drugamount is updated by adding it to t
 1. The Drugamount should be a number(either integer or float). If a String is encountered then that record is skipped.
 2. All 5 values, seperated by commas must be present for each record.  (id,prescriber_last_name,prescriber_first_name,drug_name,drug_cost).<br />
 If there are less than 5 values, then that record is skipped and not read.<br />
-  a. 123,smith,john,prazolam,1000 - This record id valid.<br />
+  a. 123,smith,john,prazolam,1000 - This record is valid.<br />
   b. 123,,john,prazolam,1000 - This record is valid.<br />
   c. 123,john,prazolam,1000 - This record is NOT valid.<br />
 
@@ -34,9 +34,9 @@ The submission follows the below repositary structure:
 3. output - consisting of the output file(top_cost_drug.txt) for the above input file.
 4. src - consists of the sourcecode
 5. run.sh - shell script to run the above sourcecode and read the inputargument and outputargument
-6. insight_testsuite - consists of the following items:
-a. tests folder : including the original test provided, there are 5 other tests which have been run and executed successfully. the foldername specifies the test conducted.
-b. run-tests.sh : shell script to run the tests.
-c. results.txt : output of the tests which have been run
-d. temp : temporary folder created while running the tests
+6. insight_testsuite - consists of the following items:<br />
+a. tests folder : including the original test provided, there are 5 other tests which have been run and executed successfully. the foldername specifies the test conducted.<br />
+b. run-tests.sh : shell script to run the tests.<br />
+c. results.txt : output of the tests which have been run. <br />
+d. temp : temporary folder created while running the tests. <br />
 
