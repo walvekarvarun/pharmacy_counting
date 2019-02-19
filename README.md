@@ -16,9 +16,9 @@ If Patientname is repeated then only the drugamount is updated by adding it to t
 1. The Drugamount should be a number(either integer or float). If a String is encountered then that record is skipped.
 2. All 5 values, seperated by commas must be present for each record.  (id,prescriber_last_name,prescriber_first_name,drug_name,drug_cost) 
 If there are less than 5 values, then that record is skipped and not read: 
-Eg of a record that will be read  : 123,smith,john,prazolam,1000
-Eg of a record that will be read  : 123,,john,prazolam,1000
-Eg of a record that will NOT be read : 123,john,prazolam,1000
+Eg of a record that will be read  : 123,smith,john,prazolam,1000 \n
+Eg of a record that will be read  : 123,,john,prazolam,1000 \n
+Eg of a record that will NOT be read : 123,john,prazolam,1000 \n
 
 Upon creating the nested dictionary, the total number of patients for that drug and the total amount spent on that drug are calculated and stored in another dictionary - output-dictionary.
 
