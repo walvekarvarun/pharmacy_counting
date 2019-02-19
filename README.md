@@ -1,26 +1,32 @@
 The Entire Source code is written in Python.
 The Source Code is titled pharmacy_counting.py and is located in the src folder.
 
-Comments about the Code:
-The input file is read line by line and the following contents are stored in pythons defaultdictionary.
-1. Drug Name is stored as key
-2. A combination of firstname + lastname , drugamount is stored as value.
+# Comments about the Code:
 
-Since default dictionary is used for each key(drugname) all the combinations of firstname+lastname,drugamount are stored as values pointing to the key.
+There are 2 functions used-
+1. process_data : to read file, calculate and write output.
+2. main : to parse the arguments passed in the script.
 
-Key assumptions made here are:
+## DataStructure and Methodology
+The input file is read line by line and the following contents are stored in a nested dictionary.
+The nested dictonary follows the format {Key : Value}, where Key is Drug name and Value is a Dictionary {key : value},where key is the patient name and value is the drug amount. 
+If Patientname is repeated then only the drugamount is updated by adding it to the existing drug amount.
+
+## Key assumptions made here are:
 1. The Drugamount should be a number(either integer or float). If a String is encountered then that record is skipped.
 2. All 5 values, seperated by commas must be present for each record.  (id,prescriber_last_name,prescriber_first_name,drug_name,drug_cost) 
-If there less than 5 values, then that record is skipped and not read: 
+If there are less than 5 values, then that record is skipped and not read: 
 Eg of a record that will be read  : 123,smith,john,prazolam,1000
 Eg of a record that will be read  : 123,,john,prazolam,1000
 Eg of a record that will NOT be read : 123,john,prazolam,1000
 
-Upon storing the key values, the total number of prescribers and the total drug cost are then calculated and stored in a new defaultdictionary
+Upon creating the nested dictionary, the total number of patients for that drug and the total amount spent on that drug are calculated and stored in another dictionary - output-dictionary.
 
-Each key value combination of this defaultdictionary is sorted by totaldrugcost in decending order, and if a tie, then by the drugname in ascending order and written to an outputfile.
+Each key value combination of this output-dictionary is sorted by totaldrugcost in decending order, and if a tie, then by the drugname in ascending order and written to an outputfile.
 
 The main function consists of an argumentparser which reads the inputfile passed as an argument in commandline and produces and output file in the outputfile argument specified.
+
+# Repositary Structure
 
 The submission follows the below repositary structure:
 1. README.md - Consisting of the methodology followed.
@@ -33,5 +39,4 @@ a. tests folder : including the original test provided, there are 5 other tests 
 b. run-tests.sh : shell script to run the tests.
 c. results.txt : output of the tests which have been run
 d. temp : temporary folder created while running the tests
-
 
